@@ -1,4 +1,22 @@
-*.docx filter=lfs diff=lfs merge=lfs -text
-*.pdf filter=lfs diff=lfs merge=lfs -text
-*.pptx filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
+# По умолчанию — нормализация в LF при коммите, сохранение LF в рабочей копии
+* text=auto eol=lf
+
+# Явно текстовые форматы — всегда LF
+*.md    text eol=lf
+*.tex   text eol=lf
+*.txt   text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.json  text eol=lf
+*.csv   text eol=lf
+*.py    text eol=lf
+*.bib   text eol=lf
+
+# Бинарные — не трогать
+*.docx  binary
+*.pdf   binary
+*.xlsx  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.svg   text eol=lf
