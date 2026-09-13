@@ -1,22 +1,28 @@
-# По умолчанию — нормализация в LF при коммите, сохранение LF в рабочей копии
-* text=auto eol=lf
+# Автоматически определять текстовые файлы и нормализовать концы строк
+* text=auto
 
-# Явно текстовые форматы — всегда LF
-*.md    text eol=lf
-*.tex   text eol=lf
-*.txt   text eol=lf
-*.yml   text eol=lf
-*.yaml  text eol=lf
-*.json  text eol=lf
-*.csv   text eol=lf
-*.py    text eol=lf
-*.bib   text eol=lf
+# Markdown, txt, скрипты — всегда LF в репозитории, LF в рабочей копии
+*.md   text eol=lf
+*.txt  text eol=lf
+*.sh   text eol=lf
+*.py   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
 
-# Бинарные — не трогать
-*.docx  binary
-*.pdf   binary
-*.xlsx  binary
-*.png   binary
-*.jpg   binary
-*.jpeg  binary
-*.svg   text eol=lf
+# Windows-скрипты — CRLF при выгрузке
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# Бинарные файлы — Git не должен их трогать
+*.docx binary
+*.doc  binary
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.zip  binary
+*.xlsx binary
+*.pptx binary
